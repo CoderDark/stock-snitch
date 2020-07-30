@@ -3,14 +3,14 @@ const fs = require('fs');
 const Toolbox = require('./toolbox');
 const axios = require('axios');
 const Datastore = require('nedb');
-const token = require('../token.txt');
+//const token = require('../token.txt');
 
 let db = null;
 const dbPath = path.join(process.cwd(), 'stock-snitch.db');
 
 const results = new Toolbox.TextBox('results');
 
-const getSymbolData = (symbol, callback) => {
+const getSymbolData = (token, symbol, callback) => {
   axios.get(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${token}`)
     .then((response) => {
       callback(null, response);
