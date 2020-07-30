@@ -1,0 +1,31 @@
+{
+  "name": "stock-snitch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "electron": "^9.1.2",
+    "electron-builder": "^22.8.0"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
+  },
+  "build": {
+    "appId": "com.stock-snitch",
+    "mac": {
+      "category": "com.stock-snitch"
+    },
+    "directories": {
+      "buildResources": "./resources"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+html, body {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: Roboto, sans-serif;
+    background-color: #3d3d3d;
+    padding: 10px;
+    color: white;
+}
+
+.row,
+.column {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row > *:nth-of-type(1n+2) {
+    margin-left: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column > *:nth-of-type(1n+2) {
+    margin-top: 10px;
+}
+
+.align-right[class^='row'] {
+    justify-content: flex-end;
+}
+
+.align-right[class^='column'] {
+    align-items: flex-end;
+}
+
+.align-left[class^='row'] {
+    justify-content: flex-start;
+}
+
+.align-left[class^='column'] {
+    align-items: flex-start;
+}
+
+.align-center[class^='row'] {
+    justify-content: center;
+}
+
+.align-center[class^='column'] {
+    align-items: center;
+}
+
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.grow-2 {
+    flex-grow: 2;
+}
+
+.grow-3 {
+    flex-grow: 3;
+}
+
+.grow-4 {
+    flex-grow: 4;
+}
+
+.grow-5 {
+    flex-grow: 5;
+}
+
+.grow-6 {
+    flex-grow: 6;
+}
+
+.grow-7 {
+    flex-grow: 7;
+}
+
+.grow-8 {
+    flex-grow: 8;
+}
+
+.grow-9 {
+    flex-grow: 9;
+}
+
+.grow-10 {
+    flex-grow: 10;
+}
+
+.grow-11 {
+    flex-grow: 11;
+}
+
+.grow-12 {
+    flex-grow: 12;
+}
+
+input,
+input[type="text"] {
+    height: 24px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+textarea {
+    height: 100px;
+    outline: none;
+    resize: none;
+    font-family: Roboto, sans-serif;
+}
+
+label {
+    color: white;
+    margin-bottom: 2px;
+}
+
+button {
+    height: 30px;
+}
+
+select {
+    height: 30px;
+    outline: none;
+}
+
+select option {
+    outline: none;
+}
+
+select[multiple] {
+    height: 125px;
+}
+
+select[multiple] option {
+    height: 20px;
+    padding: 3px;
+    margin: 0;
+    outline: none;
+}
