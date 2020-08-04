@@ -3,7 +3,7 @@ const fs = require('fs');
 const Toolbox = require('./toolbox');
 const axios = require('axios');
 const Datastore = require('nedb');
-//const token = require('../token.txt');
+const config = require('../config.json');
 
 let db = null;
 const dbPath = path.join(process.cwd(), 'stock-snitch.db');
@@ -46,10 +46,29 @@ const init = () => {
   }
 
   db.find({}, (err, records) => {
+    const stockContainer = document.getElementById('stocks');
+
     records.forEach((record) => {
-      //getSymbolData(record.symbol, (err, response) => {
-      results.text = `${results.text}\n${record.symbol}: symbol data`;
-      ///});
+      getSymbolData(config.token, record.symbol, (err, response) => {
+        const {c, h, l, o, pr, t} = response.data;
+
+        const stock = document.createElement('div');
+        const stockSymbol = document.createElement('div');
+        const stockPrice = document.createElement('div');
+
+        stockSymbol.innerText = record.symbol;
+        stockSymbol.classList.add('stock-tile-symbol');
+
+        stockPrice.innerText = c;
+        stockSymbol.classList.add('stock-tile-price');
+
+        stock.classList.add('stock-tile');
+
+        stock.append(stockSymbol);
+        stock.append(stockPrice);
+
+        stockContainer.append(stock);
+      });
     });
   });
 };

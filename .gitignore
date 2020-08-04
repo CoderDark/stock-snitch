@@ -1,5 +1,5 @@
 .idea
 node_modules
-token.txt
+config.json
 dist
 stock-snitch.db
